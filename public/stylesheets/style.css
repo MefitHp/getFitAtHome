@@ -1,0 +1,15 @@
+body {
+  padding: 0;
+  margin: 0; }
+
+.button.is-primary {
+  background-color: red;
+  border-color: transparent;
+  color: #fff; }
+
+.button.is-primary:hover, .button.is-primary.is-hovered {
+  background-color: #c40000;
+  border-color: transparent;
+  color: #fff; }
+
+/*# sourceMappingURL=style.css.map */

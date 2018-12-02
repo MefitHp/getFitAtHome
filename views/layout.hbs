@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <!-- Bootstrap core CSS     -->
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="/assets/css/paper-kit.css" rel="stylesheet" />
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,300,700' rel='stylesheet' type='text/css'>
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/assets/css/nucleo-icons.css" rel="stylesheet" />
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md fixed-top" color-on-scroll="500">
+    <div class="container">
+      <div class="navbar-translate">
+        <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse"
+          data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar"></span>
+          <span class="navbar-toggler-bar"></span>
+          <span class="navbar-toggler-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Get Fit at Home</a>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav ml-auto">
+          {{#if session}}
+          <li class="nav-item">
+            <a href="/profile" class="nav-link"><i class="nc-icon nc-single-02"></i>
+              Perfil
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/dashboard" class="nav-link"><i class="nc-icon nc-layout-11"></i> Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a href="/auth/logout" class="btn btn-danger btn-round">Cerrar Sesión <i class="fa fa-times"></i></a>
+          </li>
+          {{else}}
+          <li class="nav-item">
+            <a href="/auth/login" class="nav-link"><i class="nc-icon nc-single-02"></i>
+              Inicia sesión
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/auth/signup" class="btn btn-danger btn-round">Registrate</a>
+          </li>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div style="margin-top: 71px;">
+    {{{body}}}
+  </div>
+
+</body>
+<script src="/assets/js/jquery-3.2.1.js" type="text/javascript"></script>
+<script src="/assets/js/jquery-ui-1.12.1.custom.min.js" type="text/javascript"></script>
+<script src="/assets/js/popper.js" type="text/javascript"></script>
+<script src="/assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+<!-- Switches -->
+<script src="/assets/js/bootstrap-switch.min.js"></script>
+
+<!--  Plugins for Slider -->
+<script src="/assets/js/nouislider.js"></script>
+
+<!--  Plugins for DateTimePicker -->
+<script src="/assets/js/moment.min.js"></script>
+<script src="/assets/js/bootstrap-datetimepicker.min.js"></script>
+
+<!--  Paper Kit Initialization and functons -->
+
+<script src="/javascripts/script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</html>

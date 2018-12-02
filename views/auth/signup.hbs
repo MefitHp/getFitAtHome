@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <div class="page-header" style="background-image: url('../assets/img/login-image.jpg');">
+    <div class="filter"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 ml-auto mr-auto">
+          <div class="card card-register">
+            <h3 class="title">Únete a Get Fit at Home</h3>
+            <div class="social-line text-center" style="display: flex; justify-content: space-around;">
+              <form action="/auth/facebook" method="post">
+                <button type="submit" class="btn btn-facebook-bg facebook-sharrre btn-round sharrre">
+                  <i class="fa fa-facebook-square"></i>
+                  Facebook
+                </button>
+              </form>
+              <form action="/auth/google" method="post">
+                <button type="submit" class="btn btn-google-bg google-sharrre btn-round sharrre">
+                  <i class="fa fa-google-plus"></i>
+                  Google
+                </button>
+              </form>
+            </div>
+            <form action="/auth/signup" method="POST" class="register-form">
+              <label>Email</label>
+              <input type="email" class="form-control" name="email" placeholder="Email">
+              <label>Contraseña</label>
+              <input type="password" class="form-control" name="password" placeholder="Contraseña">
+              {{#if message }}
+              <p class="help is-danger">{{ message }}</p>
+              {{/if}}
+              <button class="btn btn-danger btn-block btn-round">Registrarse</button>
+            </form>
+            <div class="forgot">
+              <a href="/auth/login" class="btn btn-link btn-danger">¿Ya tienes una cuenta? Inicia sesión</a>
+            </div>
+          </div>
+        </div>
+      </div>

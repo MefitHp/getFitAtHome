@@ -1,0 +1,41 @@
+<div class="wrapper">
+  <div class="page-header" style="background-image: url('../assets/img/login-image.jpg');">
+    <div class="filter"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 ml-auto mr-auto">
+          <div class="card card-register">
+            <h3 class="title">Inicia sesión: </h3>
+            <form action="/auth/login" method="POST" class="register-form">
+              <label>Email</label>
+              <input type="text" class="form-control" name="email" placeholder="Nombre de usuario">
+              <label>Contraseña:</label>
+              <input type="password" class="form-control" name="password" placeholder="Contraseña">
+              {{#if message }}
+              <p class="help is-danger">{{ message }}</p>
+              {{/if}}
+              <button class="btn btn-danger btn-block btn-round">Iniciar sesión.</button>
+            </form>
+            <br>
+            <hr>
+            <p class="text-center">O inicia sesión con: </p>
+            <div class="social-line text-center" style="display: flex; justify-content: space-around;">
+              <form action="/auth/facebook" method="post">
+                <button type="submit" class="btn btn-facebook-bg facebook-sharrre btn-round sharrre">
+                  <i class="fa fa-facebook-square"></i>
+                  Facebook
+                </button>
+              </form>
+              <form action="/auth/google" method="post">
+                <button type="submit" class="btn btn-google-bg google-sharrre btn-round sharrre">
+                  <i class="fa fa-google-plus"></i>
+                  Google
+                </button>
+              </form>
+            </div>
+            <div class="forgot">
+              <a href="/auth/signup" class="btn btn-link btn-danger">¿No tienes una cuenta? <strong>Registrate.</strong></a>
+            </div>
+          </div>
+        </div>
+      </div>
