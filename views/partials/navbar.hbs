@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <div class="navbar-translate">
+      <button class="navbar-toggler navbar-toggler-right navbar-burger" type="button" data-toggle="collapse"
+        data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-bar"></span>
+        <span class="navbar-toggler-bar"></span>
+        <span class="navbar-toggler-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Get Fit at Home</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav ml-auto">
+        {{#if session}}
+        <li class="nav-item">
+          <a href="/profile" class="nav-link"><i class="nc-icon nc-single-02"></i>
+            Perfil
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/dashboard" class="nav-link"><i class="nc-icon nc-layout-11"></i> Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a href="/auth/logout" class="btn btn-danger btn-round">Cerrar Sesión <i class="fa fa-times"></i></a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a href="/auth/login" class="nav-link"><i class="nc-icon nc-single-02"></i>
+            Inicia sesión
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="/auth/signup" class="btn btn-danger btn-round">Registrate</a>
+        </li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>

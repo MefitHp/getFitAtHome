@@ -11,5 +11,9 @@ router.get('/', ensureAuthenticated, (req, res, next) => {
   res.render('dashboard/dashboard', currentUser);
 });
 
+router.post('/apply', ensureAuthenticated, (req, res, next) => {
+  res.send(req.body)
+})
+
 module.exports = router;
 

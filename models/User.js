@@ -7,6 +7,10 @@ const userSchema = new Schema({
   password: String,
   facebookId: String,
   photoURL: String,
+  membership: {
+    type: mongoose.Types.ObjectId,
+    default: null
+  }
 }, {
     timestamps: {
       createdAt: 'created_at',
