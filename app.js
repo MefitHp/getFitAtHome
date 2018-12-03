@@ -96,5 +96,7 @@ app.use('/auth', authRoutes);
 const dashboardRoutes = require('./routes/dashboardRoutes')
 app.use('/dashboard', dashboardRoutes)
 
+const profileRoutes = require('./routes/profileRoutes')
+app.use('/profile', profileRoutes)
 
 module.exports = app;

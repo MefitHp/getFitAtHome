@@ -5804,6 +5804,8 @@ textarea.form-control {
   max-width: 180px;
   margin: -85px auto 0;
   display: inline-block;
+  z-index:1;
+  position: relative;
 }
 
 .owner .name h4 {
