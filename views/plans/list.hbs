@@ -1,0 +1,7 @@
+<h1>Lista de planes (membresías)</h1>
+
+<div>
+  {{#each plans}}
+    <a href="/plans/detail/{{this._id}}">{{this.planName}}</a>
+  {{/each}}
+</div>
