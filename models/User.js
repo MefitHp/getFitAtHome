@@ -8,9 +8,17 @@ const userSchema = new Schema({
   facebookId: String,
   photoURL: String,
   membership: {
-    type: mongoose.Types.ObjectId,
+    type: String,
     default: null
-  }
+  },
+  address: {
+    type: {
+      type: String,
+      default: "Point"
+    },
+    coordinates: [Number]
+  },
+  pickupDate: String,
 }, {
     timestamps: {
       createdAt: 'created_at',

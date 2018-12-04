@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const User = require('../models/User')
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) { return next(); }
@@ -12,7 +13,28 @@ router.get('/', ensureAuthenticated, (req, res, next) => {
 });
 
 router.post('/apply', ensureAuthenticated, (req, res, next) => {
-  res.send(req.body)
+  const updatedUser = {
+    pickupDate: req.body.pickupDate,
+    membership: req.body.membership,
+    address: {
+      type: "Point",
+      coordinates: [req.body.lng, req.body.lat]
+    }
+  }
+  User.findOneAndUpdate({ _id: req.user._id }, { $set: updatedUser })
+    .then(resultado => {
+      console.log('new', updatedUser)
+      res.redirect('/dashboard/invoice')
+    })
+    .catch(err => console.log(err))
+})
+
+router.get('/invoice', (req, res, next) => {
+  User.findById(req.user._id)
+    .then(user => {
+      console.log('invoice', user)
+      res.render('dashboard/invoice', user)
+    }).catch(err => console.log(err))
 })
 
 module.exports = router;

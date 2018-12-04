@@ -1,0 +1,58 @@
+<div class="page-header" data-parallax="true" style="background-image: url('../assets/img/daniel-olahh.jpg');">
+  <div class="filter"></div>
+  <div class="container">
+    <div class="motto text-center">
+      <h1>¡Bienvenido a la familia {{#if name}} {{name}} {{else}} {{email}} {{/if}}!</h1>
+      <h3>Ahora eres parte de GetFitAtHome, te dejamos aquí abajo un resumen de tu orden:</h3>
+      <br />
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class=" col-md-6 d-flex justify-content-center align-items-center">
+      <div class="container">
+        <h4>Mebresía seleccionada:</h4>
+        <p>{{membership}}</p>
+        <h4>Fecha de entrega de productos: </h4>
+        <p>{{pickupDate}}</p>
+        <br>
+        <a href="/dashboard" class="btn btn-danger btn-round">Ir al dashboard</a>
+      </div>
+
+    </div>
+    <div class="col-md-6">
+      <div class="container">
+        <h4 class="text-center">Ubicación de entrega: </h4>
+        <p>
+          <input id="lat" value="{{address.coordinates.[1]}}" type="hidden">
+          <input id="lng" value="{{address.coordinates.[0]}}" type="hidden">
+        </p>
+        <div class="map-container" style="display: flex; justify-content: center; align-items: center;">
+          <div id="map" style="flex: 1; width: 800px; height: 50vh;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0iBJ86eZUGkhbuWhS7b4_B3-8cRYQgTQ&libraries=places"></script>
+<script>
+  const lugar = {
+    lat: Number(document.querySelector('#lat').value),
+    lng: Number(document.querySelector('#lng').value)
+  }
+  function startMap() {
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: lugar,
+      zoom: 16
+    });
+    const myMarker = new google.maps.Marker({
+      position: lugar,
+      map: map,
+      title: "I'm here"
+    });
+  }
+  startMap()
+</script>

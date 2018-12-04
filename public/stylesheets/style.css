@@ -36,6 +36,9 @@ body {
   padding: 10px;
   flex: 1 1 30%; }
 
+.page-header {
+  min-height: 30vh; }
+
 @media all and (max-width: 1000px) {
   .container-flex {
     flex-wrap: wrap; }
