@@ -1,0 +1,18 @@
+<div>
+  <h2>{{planName}}</h2>
+  <h3>{{description}}</h3>
+  <h5>{{price}}</h5>
+  <hr>
+  <h2>Productos incluidos en esta membresía:</h2>
+  <ul>
+    {{#each products}}
+      <li>
+        <a href="/products/detail/{{this._id}}">{{this.productName}}</a>
+      </li>
+    {{/each}}
+  </ul>
+  <a href="/products/new/{{_id}}">Agregar productos a este plan</a>
+  <hr>
+  <a href="/products/update/{{_id}}">Editar</a>
+  <a href="/products/delete/{{_id}}">Borrar</a>
+</div>

@@ -90,6 +90,12 @@ require('./passport')(app);
 const index = require('./routes/index');
 app.use('/', checkUser, index);
 
+const planRoutes = require('./routes/plans')
+app.use('/plans', planRoutes)
+
+const productRoutes = require('./routes/products')
+app.use('/products', productRoutes)
+
 const authRoutes = require('./routes/auth');
 app.use('/auth', authRoutes);
 

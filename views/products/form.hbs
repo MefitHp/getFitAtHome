@@ -1,0 +1,29 @@
+<div>
+  <h1>Añade un producto</h1>
+  <div>{{error}}</div>
+  <form action="{{action}}" method="POST">
+    <p>
+      Nombre:
+      <input type="text" name="productName" value="{{product.productName}}">
+    </p>
+    <p>
+      Code:
+      <input type="text" name="description" value="{{product.description}}">
+    </p>
+    <p>
+      PhotoURL:
+      <input type="text" name="photo" value="{{product.photo}}">
+    </p>
+    <p>
+      Precio:
+      <input type="text" name="price" value="{{product.price}}">
+    </p>
+    <p>
+      Marca:
+      <input type="text" name="weight" value="{{product.weight}}">
+    </p>
+    <p>
+      <input type="submit" value="Guardar producto">
+    </p>
+  </form>
+</div>
