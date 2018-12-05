@@ -37,5 +37,13 @@ router.get('/invoice', (req, res, next) => {
     }).catch(err => console.log(err))
 })
 
+router.get('/membresia', (req, res, next) => {
+  res.render('dashboard/membership')
+})
+
+router.get('/membresia/editar', (req, res, next) => {
+  res.render('dashboard/editMembership')
+})
+
 module.exports = router;
 
