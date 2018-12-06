@@ -75,6 +75,10 @@ router.get('/recetas', (req, res, next) => {
   res.render('dashboard/recipes')
 })
 
+router.get('/extras', (req, res, next) => {
+  res.render('dashboard/extras')
+})
+
 router.get('/recetas/:id', (req, res, next) => {
   const { id } = req.params
   const conf = {
