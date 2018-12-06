@@ -25,6 +25,9 @@ $('#4_previous').click(function () {
   $('#step4Tab').click()
 });
 
+$('.fa.fa-expand').on("click", function () {
+  $('.recipe-card').toggleClass("expand");
+})
 
 $('#datetimepicker').datetimepicker({
   icons: {

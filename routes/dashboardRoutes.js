@@ -45,5 +45,9 @@ router.get('/membresia/editar', (req, res, next) => {
   res.render('dashboard/editMembership')
 })
 
+router.get('/recetas', (req, res, next) => {
+  res.render('dashboard/recipes')
+})
+
 module.exports = router;
 
