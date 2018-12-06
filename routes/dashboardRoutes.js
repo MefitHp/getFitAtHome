@@ -53,7 +53,9 @@ router.get('/membresia/editar', (req, res, next) => {
 //   res.render('dashboard/membership')
 // })
 
-
+router.get('/progreso', (req, res, next) => {
+  res.render('dashboard/progreso')
+})
 
 router.get('/recetas', (req, res, next) => {
   res.render('dashboard/recipes')
