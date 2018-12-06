@@ -1,36 +1,39 @@
 <div class="wrapper">
   <div class="page-header page-header-xs" style="background-image: url('https://images.pexels.com/photos/959252/dramatic-clouds-sky-drama-959252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
-    <div class="filter"></div>
-  </div>
-  <div class="section profile-content" style="padding-top: 40px;">
-    <div class="container">
-      <div class="owner">
-        <div class="name" style="text-align: left">
+ 
+  
+  
+    <div class="container" style="padding-top:25px">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 card" style="padding:25px">
           <form action="{{action}}" method="POST" enctype="multipart/form-data">
             <div class="form-group">
-              <p>
+              <label>
                 Nombre de usuario:
-                <input type="text" class="form-control" style="width:30%" placeholder="Tu nuevo nombre de usuario" name="name" value="{{name}}">
-              </p>
+              </label>
+              <input type="text" class="form-control" placeholder="Tu nuevo nombre de usuario" name="name" value="{{name}}">
             </div>
               <br>
             <div class="form-group">
               <p>
                 Email:
-                <input type="text" class="form-control" style="width:30%" placeholder="Tu nuevo email" name="email" value="{{email}}">
+                <input type="text" class="form-control" placeholder="Tu nuevo email" name="email" value="{{email}}">
               </p>
             </div>
               <br>
             <div class="form-group">
               <p>
                 Foto:
+                <span><i class="fa fa-camera"></i></span>
+
                 <br>
-                <input type="file" name="photoURL" value="{{photoURL}}">
+                <input type="file" name="photoURL" class="btn btn-link btn-danger" style="padding: 0" value="{{photoURL}}">
               </p>
             </div>
               <br>
               <p>
-                <input type="submit" value="Guardar cambios">
+                <input type="submit" class="btn btn-round btn-danger" value="Guardar cambios">
               </p>
           </form>
         </div>
