@@ -1,4 +1,4 @@
-<div class="page-header" data-parallax="true" style="background-image: url('/assets/img/antoine-barres.jpg');">
+<div class="page-header" style="background-image: url('/assets/img/antoine-barres.jpg');">
   <div class="filter"></div>
   <div class="container">
     <div class="motto text-center">
@@ -7,24 +7,25 @@
     </div>
   </div>
 </div>
-<form action="/dashboard/membresia/editar" method="POST" id="apply">
+<form action="/dashboard/membresia/editar" method="POST" id="apply" onSubmit="if(!confirm('¿Estás seguro que quieres cambiar tu subscripción?. \n Tus cambios se verán reflejados el siguiente periodo de facturación')){return false;}">
   <h2 style="text-align:center"> ¿A cuál membresía deseas cambiar? </h2>
   <div class="plans-container">
+    {{#each plans}}
     <div class="plan">
       <div class="card">
         <div class="card-img-body">
           <div class="form-check-radio">
             <label class="form-check-label">
-              <input class="form-check-input" type="radio" name="membership" id="membership" value="Membresía Básica">
+              <input class="form-check-input" type="radio" name="membership" id="membership" value="{{this._id}}">
               <span class="form-check-sign"></span>
             </label>
           </div>
           <div class="d-flex justify-content-center align-items-center">
-            <img class="card-img" style="width:200px" src="https://res.cloudinary.com/ironhackmigu8/image/upload/v1544059621/memb1.png"
-              alt="Card image cap">
+            <img class="card-img" src="{{this.photoPlan}}" style="max-width: 200px" alt="Card image cap">
           </div>
         </div>
         <div class="card-body">
+<<<<<<< HEAD
           <h4 class="card-title">Card title</h4>
           <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
             additional content.
@@ -88,10 +89,19 @@
             natural lead-in to
             additional content. This content is a little
             bit longer.</p>
+=======
+          <p class="card-text">{{this.description}}</p>
+          <span class="label label-success">Costo: {{this.price}} MXN </span>
+>>>>>>> c78682a63038d333a98f11adb3950595aa1c845b
         </div>
       </div>
     </div>
+    {{/each}}
   </div>
+  <div class="d-flex justify-content-center" style="padding:8px 0;">
+    <p><button type="submit" class="btn btn-danger btn-modal">Realizar cambio</button></p>
+  </div>
+<<<<<<< HEAD
   <div class="d-flex justify-content-end" style="padding:8px 0;">
     {{!-- <button class="btn btn-danger" type="submit">Realizar cambio</button> --}}
     <p><a href="/dashboard/membresia" class="btn btn-danger btn-modal">Realizar cambio</a></p>
@@ -106,5 +116,7 @@
       </div> --}}
 
     </div>
+=======
+>>>>>>> c78682a63038d333a98f11adb3950595aa1c845b
   </div>
 </form>
