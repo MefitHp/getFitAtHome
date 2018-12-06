@@ -48,17 +48,24 @@ router.get('/membresia', (req, res, next) => {
 })
 
 router.get('/membresia/editar', (req, res, next) => {
-  res.render('dashboard/editMembership')
+  const currentUser = req.user
+  Plan.find()
+    .then(plans => {
+      res.render('dashboard/editMembership', { currentUser, plans });
+    }).catch(err => console.log(err))
 })
 
-//Para preguntar antes del cambio de membresía
-// router.get('/membresia/editar', (req, res, next) => {
-//   res.render('dashboard/membership')
-// })
+router.post('/membresia/editar', (req, res, next) => {
+  const updatedUser = {
+    membership: req.body.membership,
+  }
 
-// router.post('/membresia/editar', (req, res, next) => {
-//   res.render('dashboard/membership')
-// })
+  User.findOneAndUpdate({ _id: req.user._id }, { $set: updatedUser })
+    .then(resultado => {
+      res.redirect('/dashboard/membresia')
+    })
+    .catch(err => console.log(err))
+})
 
 
 
