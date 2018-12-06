@@ -1,0 +1,37 @@
+<div class="container" style="margin-bottom: 20px;">
+  <h4 style="padding-top: 20px;" class="text-center" style="margin: 5px;">Ingredients:</h4>
+  <div class=" row">
+    <div class="col-md-4">
+      <div class="owner">
+        <div class="d-flex justify-content-center">
+          <div style="padding: 15px;">
+            <img src="{{receta.data.image}}" alt="Circle Image" style="max-width: 280px;" class="img-no-padding img-responsive">
+          </div>
+        </div>
+        <div class="name">
+          <h4 class="title" style="margin: 0;">{{receta.data.title}}<br /></h4>
+          <h6 class="description"><i class="far fa-clock"></i> {{receta.data.readyInMinutes}} Minutes</h6>
+          <a href="/dashboard/recetas" class="btn btn-danger btn-round">Regresar a recetas</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8" style="height: 50vh; overflow-Y: scroll;">
+      <ul class="list-group">
+        {{#each ingredientes}}
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+          {{this.name}}
+          <span class="badge badge-primary badge-pill">{{this.amount}} {{this.unit}}</span>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+  <div class="container">
+    <div class=" row">
+      <div class="wrapper" style="padding: 10px 40px;">
+        <h3>Instructions: </h3>
+        <p>{{receta.data.instructions}}</p>
+      </div>
+    </div>
+  </div>
+</div>
