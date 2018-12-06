@@ -67,6 +67,44 @@
                 <h4 class="card-title">{{this.planName}}</h4>
                 <p class="card-text">{{this.description}}</p>
                 <span class="label label-success">Costo: {{this.price}} MXN </span>
+                <button type="button" class="btn btn-outline-default btn-round" data-toggle="modal" data-target="#myModal">
+                  VER PRODUCTOS INCLUIDOS
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title text-center" id="exampleModalLabel">Esta memebresía incluye:</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body"> 
+                              <div class="col-md-8">
+                                <h6 style="padding-top: 20px">Tu membresía incluye lo siguiente: </h6>
+                                <ul class="list-group">
+                                  {{#each membership.products}}
+                                  <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    {{this.productName}}
+                                    <span class="label label-success">{{this.size}} size</span>
+                                  </li>
+                                  {{/each}}
+                                </ul>
+                              </div>
+                            </div>
+                            {{!-- <div class="modal-footer">
+                                <div class="left-side">
+                                    <button type="button" class="btn btn-default btn-link" data-dismiss="modal">Never mind</button>
+                                </div>
+                                <div class="divider"></div>
+                                <div class="right-side">
+                                    <button type="button" class="btn btn-danger btn-link">Delete</button>
+                                </div>
+                            </div> --}}
+                        </div>
+                    </div>
+                </div>
               </div>
             </div>
           </div>
