@@ -29,8 +29,20 @@ router.get('/edit/:id', (req, res, next) => {
 
 router.post('/edit/:id', uploadCloud.single('photoURL'), (req, res, next) => {
   const { id } = req.params
-  const photoURL = req.file.url
-  User.findByIdAndUpdate(id, { $set: req.body, photoURL }, { new: false })
+  const {name, email} = req.body
+  const newuser = {}
+  if(req.file){
+    const photoURL = req.file.url
+    newuser = {
+      name: name, email:email, photoURL:photoURL
+    }
+  }else{
+    newuser = {
+      name: name,
+      email: email
+    }
+  }
+  User.findByIdAndUpdate(id, { $set: newuser }, { new: false })
     .then(user => {
       res.redirect(`/profile/`)
     })
