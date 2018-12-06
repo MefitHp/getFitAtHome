@@ -1,0 +1,36 @@
+<div class="container">
+  <nav class="navbar navbar-expand-md navbar-default">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar-menu"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Filtrar recetas: </a>
+    <div class="collapse navbar-collapse" id="navbar-menu">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#pk">Más rapido</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#pk">Más nutritivo</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="row" id="recipe-container">
+
+  </div>
+</div>
+<div class="d-flex justify-content-center align-content-center">
+  <img src="https://www.ems-kagawa.jp/common/images/spinner.gif" alt="Loader" id="loader">
+</div>
+<script src="/javascripts/APIHandler.js"></script>
+<script>
+
+  const recipesAPI = new APIHandler("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/")
+
+  $(document).ready(function () {
+    var apiRecipes = recipesAPI.getFullList()
+  })
+</script>
