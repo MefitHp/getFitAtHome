@@ -9,10 +9,8 @@ const planSchema = new Schema({
   },
   description: String,
   price: Number,
-  products:[{
-    type: Schema.Types.ObjectId,
-    ref: 'Product'
-  }]
+  photoPlan:String,
+  products:Array
 },{
   timestamps:true
 })

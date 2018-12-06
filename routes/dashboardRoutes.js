@@ -45,5 +45,16 @@ router.get('/membresia/editar', (req, res, next) => {
   res.render('dashboard/editMembership')
 })
 
+//Para preguntar antes del cambio de membresía
+// router.get('/membresia/editar', (req, res, next) => {
+//   res.render('dashboard/membership')
+// })
+
+// router.post('/membresia/editar', (req, res, next) => {
+//   res.render('dashboard/membership')
+// })
+
+
+
 module.exports = router;
 

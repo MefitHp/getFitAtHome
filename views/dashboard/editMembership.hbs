@@ -2,8 +2,103 @@
   <div class="filter"></div>
   <div class="container">
     <div class="motto text-center">
-      <h1 class="text-center">Membresía</h1>
+      <h1 class="text-center">Membresía actual: </h1>
       <br />
-    </div>
+    </div>    
   </div>
 </div>
+<form action="/dashboard/membresia/editar" method="POST" id="apply">
+<h2 style="text-align:center"> ¿A cuál membresía deseas cambiar? </h2>
+        <div class="plans-container">
+          <div class="plan">
+            <div class="card">
+              <div class="card-img-body">
+                <div class="form-check-radio">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="membership" id="membership" value="Membresía Básica">
+                    <span class="form-check-sign"></span>
+                  </label>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                <img class="card-img" style="width:200px" src="https://res.cloudinary.com/ironhackmigu8/image/upload/v1544059621/memb1.png" alt="Card image cap">
+                </div>
+              </div>
+              <div class="card-body">
+                <h4 class="card-title">Card title</h4>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                  additional content.
+                  This content is a little bit longer. This is a wider card with supporting text below as a
+                  natural lead-in to
+                  additional content. This content is a little
+                  bit longer.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="plan">
+            <div class="card">
+              <div class="card-img-body">
+                <div class="form-check-radio">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="membership" id="membership" value="Membresía Estándar">
+                    <span class="form-check-sign"></span>
+                  </label>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                <img class="card-img" style="width:200px" src="https://res.cloudinary.com/ironhackmigu8/image/upload/v1544059621/memb2.png" alt="Card image cap">
+                </div>
+              </div>
+              <div class="card-body">
+                <h4 class="card-title">Card title</h4>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                  additional content.
+                  This content is a little bit longer. This is a wider card with supporting text below as a
+                  natural lead-in to
+                  additional content. This content is a little
+                  bit longer.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="plan">
+            <div class="card">
+              <div class="card-img-body">
+                <div class="form-check-radio">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="membership" id="membership" value="Membresía Premium">
+                    <span class="form-check-sign"></span>
+                  </label>
+                </div>
+                <div class="d-flex justify-content-center align-items-center">
+                <img class="card-img" style="width:200px" src="https://res.cloudinary.com/ironhackmigu8/image/upload/v1544059621/memb3.png" alt="Card image cap">
+                </div>
+              </div>
+              <div class="card-body">
+                <h4 class="card-title">Card title</h4>
+                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
+                  additional content.
+                  This content is a little bit longer. This is a wider card with supporting text below as a
+                  natural lead-in to
+                  additional content. This content is a little
+                  bit longer.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-end" style="padding:8px 0;">
+          {{!-- <button class="btn btn-danger" type="submit">Realizar cambio</button>         --}}
+          <p><a href="/dashboard/membresia" class="btn btn-danger btn-modal">Realizar cambio</a></p>
+
+              {{!-- Modal para la pregunta de confirmación --}}
+              <!-- Contenido -->
+              {{!-- <div id="myModal" class="modal">
+
+              
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Some text in the Modal..</p>
+              </div> --}}
+
+          </div>
+        </div>
+  </form>
