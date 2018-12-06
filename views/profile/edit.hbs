@@ -1,0 +1,41 @@
+<div class="wrapper">
+  <div class="page-header page-header-xs" style="background-image: url('https://images.pexels.com/photos/959252/dramatic-clouds-sky-drama-959252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
+    <div class="filter"></div>
+  </div>
+  <div class="section profile-content" style="padding-top: 40px;">
+    <div class="container">
+      <div class="owner">
+        <div class="name" style="text-align: left">
+          <form action="{{action}}" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+              <p>
+                Nombre de usuario:
+                <input type="text" class="form-control" style="width:30%" placeholder="Tu nuevo nombre de usuario" name="name" value="{{name}}">
+              </p>
+            </div>
+              <br>
+            <div class="form-group">
+              <p>
+                Email:
+                <input type="text" class="form-control" style="width:30%" placeholder="Tu nuevo email" name="email" value="{{email}}">
+              </p>
+            </div>
+              <br>
+            <div class="form-group">
+              <p>
+                Foto:
+                <br>
+                <input type="file" name="photoURL" value="{{photoURL}}">
+              </p>
+            </div>
+              <br>
+              <p>
+                <input type="submit" value="Guardar cambios">
+              </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
