@@ -3,6 +3,8 @@ const User = require("../models/User")
 const FacebookStrategy = require("passport-facebook");
 
 //facebook
+//url real https://get-fit-at-home.herokuapp.com/auth/callback/facebook
+//url Local http://localhost:3000/auth/callback/facebook
 passport.use(
   new FacebookStrategy(
     {
