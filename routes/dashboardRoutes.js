@@ -41,7 +41,10 @@ router.get('/invoice', (req, res, next) => {
 })
 
 router.get('/membresia', (req, res, next) => {
-  res.render('dashboard/membership')
+  User.findById(req.user._id).populate('membership')
+    .then(user => {
+      res.render('dashboard/membership', user)
+    }).catch(err => console.log(err))
 })
 
 router.get('/membresia/editar', (req, res, next) => {
