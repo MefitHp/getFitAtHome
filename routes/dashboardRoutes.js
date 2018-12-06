@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User')
 const axios = require('axios')
+const Plan = require('../models/Plan')
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) { return next(); }
@@ -9,7 +10,10 @@ function ensureAuthenticated(req, res, next) {
 }
 router.get('/', ensureAuthenticated, (req, res, next) => {
   const currentUser = req.user
-  res.render('dashboard/dashboard', currentUser);
+  Plan.find()
+    .then(plans => {
+      res.render('dashboard/dashboard', { currentUser, plans });
+    }).catch(err => console.log(err))
 });
 
 router.post('/apply', ensureAuthenticated, (req, res, next) => {
@@ -23,21 +27,24 @@ router.post('/apply', ensureAuthenticated, (req, res, next) => {
   }
   User.findOneAndUpdate({ _id: req.user._id }, { $set: updatedUser })
     .then(resultado => {
-      console.log('new', updatedUser)
       res.redirect('/dashboard/invoice')
     })
     .catch(err => console.log(err))
 })
 
 router.get('/invoice', (req, res, next) => {
-  User.findById(req.user._id)
+  User.findById(req.user._id).populate('membership')
     .then(user => {
+      console.log('Invoice', user)
       res.render('dashboard/invoice', user)
     }).catch(err => console.log(err))
 })
 
 router.get('/membresia', (req, res, next) => {
-  res.render('dashboard/membership')
+  User.findById(req.user._id).populate('membership')
+    .then(user => {
+      res.render('dashboard/membership', user)
+    }).catch(err => console.log(err))
 })
 
 router.get('/membresia/editar', (req, res, next) => {

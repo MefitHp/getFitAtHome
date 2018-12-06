@@ -1,4 +1,4 @@
-<div class="page-header" data-parallax="true" style="background-image: url('../assets/img/antoine-barres.jpg');">
+<div class="page-header" style="background-image: url('../assets/img/antoine-barres.jpg');">
   <div class="filter"></div>
   <div class="container">
     <div class="motto text-center">
@@ -15,12 +15,11 @@
       <div class="owner">
         <div class="d-flex justify-content-center">
           <div style="padding: 15px; max-width: 180px;">
-            <img src="../assets/img/faces/joe-gardner-2.jpg" alt="Circle Image" class="img-circle img-no-padding img-responsive">
+            <img src="{{membership.photoPlan}}" style="max-width: 160px;" alt="Circle Image" class="img-no-padding img-responsive">
           </div>
         </div>
         <div class="name">
-          <h4 class="title" style="margin: 0;">Membresía Gold<br /></h4>
-          <h6 class="description">Costo: $700</h6>
+          <h6 class="description">Costo: ${{membership.price}} MXN</h6>
           <p><a href="/dashboard/membresia/editar" class="btn btn-danger">Cambiar membresía</a></p>
         </div>
       </div>
@@ -28,19 +27,29 @@
     <div class="col-md-8">
       <h6 style="padding-top: 20px">Tu membresía incluye lo siguiente: </h6>
       <ul class="list-group">
+        {{#each membership.products}}
         <li class="list-group-item d-flex justify-content-between align-items-center">
-          Cras justo odio
-          <span class="badge badge-primary badge-pill">14 pz</span>
+          {{this.productName}}
+          <span class="label label-success">{{this.size}} size</span>
         </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Dapibus ac facilisis in
-          <span class="badge badge-primary badge-pill">2 pz</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Mancuernas adidas 3oz
-          <span class="badge badge-primary badge-pill">2 pz</span>
-        </li>
+        {{/each}}
       </ul>
+    </div>
+  </div>
+
+  <div class="container" style="margin: 20px; border: 1px solid rgba(0,0,0,.125); border-radius: .25rem; padding: 20px;">
+    <h3 class="text-center" style="margin-bottom: 20px;"> Productos: </h3>
+    <div class="row">
+      {{#each membership.products}}
+      <div class="col-md-3">
+        <div class="card">
+          <div class="recipe-card-image">
+            <img src="{{this.photo}}" style="max-width: 210px;" alt="Circle Image" class="img-no-padding img-responsive">
+            <h5 class="recipe-card-title" style="padding: 5px;">{{this.productName}}</h5>
+          </div>
+        </div>
+      </div>
+      {{/each}}
     </div>
   </div>
 </div>

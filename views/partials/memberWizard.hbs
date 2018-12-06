@@ -48,76 +48,30 @@
 
       {{!-- Step 2 --}}
       <div class="tab-pane" id="step2" role="tabpanel">
-        <p> ¿Que membresía deseas obtener? </p>
+        <h4> ¿Que membresía deseas obtener? </h4>
+        <p> Marca la casilla correspiendiente.</p>
+
         <div class="plans-container">
+          {{#each plans}}
           <div class="plan">
             <div class="card">
               <div class="card-img-body">
                 <div class="form-check-radio">
                   <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="membership" id="membership" value="Memebresía Básica">
+                    <input class="form-check-input" type="radio" name="membership" id="membership" value="{{this._id}}">
                     <span class="form-check-sign"></span>
                   </label>
                 </div>
-                <img class="card-img" src="https://picsum.photos/500/230" alt="Card image cap">
+                <img class="card-img" src="{{this.photoPlan}}" style="max-width: 200px" alt="Card image cap">
               </div>
               <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                  additional content.
-                  This content is a little bit longer. This is a wider card with supporting text below as a
-                  natural lead-in to
-                  additional content. This content is a little
-                  bit longer.</p>
+                <h4 class="card-title">{{this.planName}}</h4>
+                <p class="card-text">{{this.description}}</p>
+                <span class="label label-success">Costo: {{this.price}} MXN </span>
               </div>
             </div>
           </div>
-
-          <div class="plan">
-            <div class="card">
-              <div class="card-img-body">
-                <div class="form-check-radio">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="membership" id="membership" value="Membresía Estándar">
-                    <span class="form-check-sign"></span>
-                  </label>
-                </div>
-                <img class="card-img" src="https://picsum.photos/500/230" alt="Card image cap">
-              </div>
-              <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                  additional content.
-                  This content is a little bit longer. This is a wider card with supporting text below as a
-                  natural lead-in to
-                  additional content. This content is a little
-                  bit longer.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="plan">
-            <div class="card">
-              <div class="card-img-body">
-                <div class="form-check-radio">
-                  <label class="form-check-label">
-                    <input class="form-check-input" type="radio" name="membership" id="membership" value="Membresía Premium">
-                    <span class="form-check-sign"></span>
-                  </label>
-                </div>
-                <img class="card-img" src="https://picsum.photos/500/230" alt="Card image cap">
-              </div>
-              <div class="card-body">
-                <h4 class="card-title">Card title</h4>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                  additional content.
-                  This content is a little bit longer. This is a wider card with supporting text below as a
-                  natural lead-in to
-                  additional content. This content is a little
-                  bit longer.</p>
-              </div>
-            </div>
-          </div>
+          {{/each}}
         </div>
         <div class="d-flex justify-content-end" style="padding:8px 0;">
           <button type="button" class="btn btn-default" style="margin: 0 5px;" id="1">Anterior</button>
@@ -164,9 +118,7 @@
               </form>
             </div>
           </div>
-
         </div>
-
         <div class="d-flex justify-content-end" style="padding:8px 0;">
           <button type="button" class="btn btn-default" style="margin: 0 5px;" id="2_previous">Anterior</button>
           <button type="button" class="btn btn-default" id="4_next">Siguiente</button>
@@ -190,7 +142,7 @@
           </div>
         </div>
         <button class="btn btn-danger" type="submit">Enviar</button>
-        <a class="btn btn-default" id="3_previous">Anterior</a>
+        <a class="btn btn-neutral" id="3_previous">Anterior</a>
       </div>
   </form>
 </div>

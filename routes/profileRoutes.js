@@ -14,30 +14,28 @@ router.get('/', ensureAuthenticated, (req, res, next) => {
 });
 
 //Modificar datos del usuario
-router.get('/edit/:id', (req,res,next)=>{
+router.get('/edit/:id', (req, res, next) => {
   //const currentUser = req.user
-  const {id} = req.params
+  const { id } = req.params
   const action = `/profile/edit/${id}`
   User.findById(id)
-    .then(user=>{
+    .then(user => {
       res.render('profile/edit', user)
     })
-    .catch(e=>{
+    .catch(e => {
       next(e)
     })
 })
 
-router.post('/edit/:id', uploadCloud.single('photoURL'), (req,res,next)=>{
-  const {id} = req.params
-  //const photoURL = req.file.originalname
+router.post('/edit/:id', uploadCloud.single('photoURL'), (req, res, next) => {
+  const { id } = req.params
   const photoURL = req.file.url
-  User.findByIdAndUpdate(id,{$set:req.body, photoURL},{new:false})
-    .then(user=>{
-
+  User.findByIdAndUpdate(id, { $set: req.body, photoURL }, { new: false })
+    .then(user => {
       res.redirect(`/profile/`)
     })
-    .catch(e=>{
-      res.render('profile/edit', {user:req.body, error})
+    .catch(e => {
+      res.render('profile/edit', { user: req.body, error })
     })
 })
 
