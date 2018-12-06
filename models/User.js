@@ -6,10 +6,11 @@ const userSchema = new Schema({
   email: String,
   password: String,
   facebookId: String,
-  googleId:String,
+  googleId: String,
   photoURL: String,
   membership: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: 'Plan',
     default: null
   },
   address: {

@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="container">
-    {{#if membership}}
+    {{#if currentUser.membership }}
     {{> dashboardComponents }}
     {{else}}
     {{> memberWizard}}
