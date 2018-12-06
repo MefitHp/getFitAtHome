@@ -10,7 +10,7 @@ passport.use(
     {
       clientID: process.env.FID,
       clientSecret: process.env.FSECRET,
-      callbackURL: "http://localhost:3000/auth/callback/facebook",
+      callbackURL: "https://get-fit-at-home.herokuapp.com/auth/callback/facebook",
       profileFields: ['displayName', 'emails', 'picture.type(large)']
     },
     function (accessToken, refreshToken, profile, cb) {

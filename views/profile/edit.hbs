@@ -1,12 +1,10 @@
 <div class="wrapper">
-  <div class="page-header page-header-xs" style="background-image: url('https://images.pexels.com/photos/959252/dramatic-clouds-sky-drama-959252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');">
- 
-  
-  
+  <div class="page-header page-header-xs" style="background-image: url('https://images.pexels.com/photos/959252/dramatic-clouds-sky-drama-959252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); height: 90vh;">
     <div class="container" style="padding-top:25px">
       <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6 card" style="padding:25px">
+          <h3>Editar perfil: </h3>
           <form action="{{action}}" method="POST" enctype="multipart/form-data">
             <div class="form-group">
               <label>
@@ -14,14 +12,14 @@
               </label>
               <input type="text" class="form-control" placeholder="Tu nuevo nombre de usuario" name="name" value="{{name}}">
             </div>
-              <br>
+            <br>
             <div class="form-group">
               <p>
                 Email:
                 <input type="text" class="form-control" placeholder="Tu nuevo email" name="email" value="{{email}}">
               </p>
             </div>
-              <br>
+            <br>
             <div class="form-group">
               <p>
                 Foto:
@@ -31,14 +29,13 @@
                 <input type="file" name="photoURL" class="btn btn-link btn-danger" style="padding: 0" value="{{photoURL}}">
               </p>
             </div>
-              <br>
-              <p>
-                <input type="submit" class="btn btn-round btn-danger" value="Guardar cambios">
-              </p>
+            <br>
+            <p>
+              <input type="submit" class="btn btn-round btn-danger" value="Guardar cambios">
+            </p>
           </form>
         </div>
       </div>
     </div>
   </div>
 </div>
-    
