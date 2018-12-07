@@ -39,6 +39,14 @@ body {
 .page-header {
   min-height: 30vh; }
 
+.iconito {
+  width: 50px;
+  color: #f5593d;
+  font-size: 50px; }
+
+.text-center {
+  text-align: center; }
+
 @media all and (max-width: 1000px) {
   .container-flex {
     flex-wrap: wrap; }
