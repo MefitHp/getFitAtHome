@@ -27,6 +27,9 @@ body {
   padding: 10px;
   flex: 1 1 48%; }
 
+.imggg {
+  max-width: 100%; }
+
 .plans-container {
   display: flex;
   flex-wrap: wrap; }
