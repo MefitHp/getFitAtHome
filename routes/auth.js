@@ -63,14 +63,6 @@ router.get('/callback/facebook',
 
 router.post("/facebook", passport.authenticate("facebook", { scope: ['email'] }), (req, res) => { });
 
-// router.get('/auth/google',
-//   passport.authenticate('google', { scope: 'https://www.googleapis.com/auth/plus.login' }));
-
-// router.get('/auth/google/callback', 
-// passport.authenticate('google', { failureRedirect: '/login' }),
-// function(req, res) {
-//   res.redirect('/private');
-// });
 
 router.get("/logout", (req, res) => {
   req.logout();
